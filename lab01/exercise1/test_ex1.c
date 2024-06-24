@@ -15,6 +15,10 @@ int main(int argc, char **argv) {
     assert(num_z == 0);
 
     /* TODO: Think of a scenario that is not tested by the current test cases. Create one additional test case to test this scenario. */
+    
+    //Noman's Test Case
+    int num_o = num_occurrences(str, 'o');
+    assert(num_o == 2);
 
     printf("Congrats! If you have made it to this line, your Part 1 Test cases are all passing!\n");
 
@@ -36,6 +40,10 @@ int main(int argc, char **argv) {
     assert(dna_seq_2.T_count == 0);
 
     /* TODO: Think of a scenario that is not tested by the current test cases. Create one additional test case to test this scenario. */
+    
+    //Noman's Test case 2
+    DNA_sequence dna_seq_3;
+    strcpy(dna_seq_3.sequence, "AACGTACAGTTT");
 
     printf("Congrats! If you have made it to this line, your Part 2 Test cases are all passing!\n");
 
