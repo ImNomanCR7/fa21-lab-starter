@@ -37,15 +37,15 @@ main:
     sw s3, 12(sp)
     sw ra, 16(sp)
     # END PROLOGUE
-    addi t0, x0, 0
-    addi s0, x0, 0
+    addi t0, x0, 0      #k = t0
+    addi s0, x0, 0      #sum = s0
     la s1, source
     la s2, dest
 loop:
     slli s3, t0, 2
     add t1, s1, s3
     lw t2, 0(t1)
-    beq t2, x0, exit
+    beq t2, x0, exit    #source[k] != 0
     add a0, x0, t2
     addi sp, sp, -8
     sw t0, 0(sp)
@@ -61,7 +61,7 @@ loop:
     addi t0, t0, 1
     jal x0, loop
 exit:
-    add a0, x0, s0
+    add a0, x0, s0      #return sum;
     # BEGIN EPILOGUE
     lw s0, 0(sp)
     lw s1, 4(sp)
