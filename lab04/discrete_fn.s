@@ -77,7 +77,10 @@ main:
 # Think: why might having a1 be useful?
 f:
     # YOUR CODE GOES HERE!
-
+    addi a0, a0, 3      # add 3 to a0 to get the index
+    slli a0, a0, 2      # shift by 2 bits to calculate offset
+    add a1, a1, a0      # a1 = address of output[i]
+    lw a0, 0(a1)        # a0 = a[i]
     jr ra               # Always remember to jr ra after your function!
 
 print_int:

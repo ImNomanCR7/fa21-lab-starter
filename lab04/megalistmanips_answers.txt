@@ -1,6 +1,19 @@
-1.
-2.
-3.
-4.
-5.
-6.
+1. Error: Incorrect space allocation on stack in map Label.	
+Fix:	addi sp, sp, -16
+
+
+2. Error: add t1, s0, x0	
+Fix:	lw t1, 0(s0)
+
+3. Error: add t1, t1, t0      # offset the array address by the count	
+Fix:	Missing this: slli t3, t0, 2
+			add t1, t1, t3
+
+4. Error:	la a0, 8(s0)        # load the address of the next node into a0	
+Fix:		lw a0, 8(s0)
+
+5. Error: lw a1, 0(s1)        # put the address of the function back into a1 to prepare for the recursion
+Fix:	mv a1, s1 
+
+6.Error:  Incorrect stack space de-allocation in done label.
+Fix:	  addi sp, sp, 16
