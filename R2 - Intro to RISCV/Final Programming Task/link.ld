@@ -1,0 +1,12 @@
+#Author: Noman Rafiq
+#Dated: July 3, 2024
+
+SECTIONS
+{
+  . = 0x80000000;           										
+  .text : { *(.text) }       	
+  . = 0x80001000;            
+  .data : { *(.data) }       	
+  _end = .;                 
+
+}
